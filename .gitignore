@@ -1,3 +1,4 @@
 /target
 mailtutan-lib/target
 mailtutan-web/release
+Cargo.lock

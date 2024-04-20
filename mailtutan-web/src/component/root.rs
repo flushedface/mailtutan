@@ -65,8 +65,7 @@ pub fn Root() -> Html {
     {
         let dispatch = dispatch.clone();
 
-        use_effect_with_deps(
-            move |_| {
+        use_effect(move || {
                 // api::fetch_messages();
                 spawn_local(async move {
                     let fetched_messages: Vec<Message> = Request::get("/api/messages")
@@ -83,8 +82,7 @@ pub fn Root() -> Html {
                         }
                     });
                 });
-            },
-            (),
+            }
         );
     }
 
